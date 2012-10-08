@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="MyProject.EditTaskDialog">
+    <Position X="1.75" Y="6.25" Width="1.75" />
+    <Members>
+      <Field Name="btnCancel" Hidden="true" />
+      <Field Name="btnOK" Hidden="true" />
+      <Field Name="chbComplited" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="dtpEnd" Hidden="true" />
+      <Field Name="dtpStart" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="nudDuration" Hidden="true" />
+      <Field Name="nudProgress" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="tableLayoutPanel2" Hidden="true" />
+      <Field Name="txtDescription" Hidden="true" />
+      <Field Name="txtTask" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAEIAQACAAABEAAAGAAIAKAAASAEEAQAAAQCAAADA=</HashCode>
+      <FileName>EditTaskDialog.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EditedTask" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MyProject.Program">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyProject.ProjectForm">
+    <Position X="5.75" Y="0.5" Width="2.75" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Field Name="contextMenuStrip1" Hidden="true" />
+      <Field Name="description" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="duration" Hidden="true" />
+      <Field Name="end" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="name" Hidden="true" />
+      <Field Name="nchOk" Hidden="true" />
+      <Field Name="nitxtDuration" Hidden="true" />
+      <Field Name="nitxtProgress" Hidden="true" />
+      <Field Name="ntxtDescription" Hidden="true" />
+      <Field Name="ntxtEnd" Hidden="true" />
+      <Field Name="ntxtName" Hidden="true" />
+      <Field Name="ntxtStart" Hidden="true" />
+      <Field Name="ok" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="progress" Hidden="true" />
+      <Field Name="start" Hidden="true" />
+      <Field Name="statusStrip1" Hidden="true" />
+      <Field Name="toolStrip1" Hidden="true" />
+      <Field Name="toolStripButton1" Hidden="true" />
+      <Field Name="toolStripButton10" Hidden="true" />
+      <Field Name="toolStripButton2" Hidden="true" />
+      <Field Name="toolStripButton3" Hidden="true" />
+      <Field Name="toolStripButton4" Hidden="true" />
+      <Field Name="toolStripButton5" Hidden="true" />
+      <Field Name="toolStripButton6" Hidden="true" />
+      <Field Name="toolStripButton7" Hidden="true" />
+      <Field Name="toolStripButton8" Hidden="true" />
+      <Field Name="toolStripButton9" Hidden="true" />
+      <Field Name="toolStripSeparator1" Hidden="true" />
+      <Field Name="toolStripSeparator2" Hidden="true" />
+      <Field Name="toolStripSeparator3" Hidden="true" />
+      <Field Name="toolStripSeparator4" Hidden="true" />
+      <Field Name="toolStripSeparator5" Hidden="true" />
+      <Field Name="toolStripSeparator6" Hidden="true" />
+      <Field Name="tree" Hidden="true" />
+      <Field Name="tsbExport" Hidden="true" />
+      <Field Name="tsbExportImage" Hidden="true" />
+      <Field Name="tsbImport" Hidden="true" />
+      <Field Name="tsbMoveDown" Hidden="true" />
+      <Field Name="tsbMoveLeft" Hidden="true" />
+      <Field Name="tsbMoveRight" Hidden="true" />
+      <Field Name="tsbMoveUp" Hidden="true" />
+      <Field Name="tsbNewProject" Hidden="true" />
+      <Field Name="tsbOpenProject" Hidden="true" />
+      <Field Name="tsbPrintPreview" Hidden="true" />
+      <Field Name="tsbRefresh" Hidden="true" />
+      <Field Name="tsbSaveAs" Hidden="true" />
+      <Field Name="tsbSaveProject" Hidden="true" />
+      <Field Name="tsbTaskAdd" Hidden="true" />
+      <Field Name="tsbTaskDelete" Hidden="true" />
+      <Field Name="tsbTaskEdit" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>MDEgKL8CkiCBAKVgoESLiF9ihiqGAHCpANAsBQAImRE=</HashCode>
+      <FileName>ProjectForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="recentList" />
+      <Field Name="dlgEditTask" />
+      <Field Name="project" />
+      <Field Name="model" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="printTasks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MyProject.RecentList">
+    <Position X="9" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQApIAAAAAAEEAAAAAAAABIgAAACAACAAAAAAQAAAA=</HashCode>
+      <FileName>RecentList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyProject.Task">
+    <Position X="2.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAIAAAACAigAIEABAAAAQAIAAEABAAAACIAASAAAA=</HashCode>
+      <FileName>Task.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Tasks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MyProject.TaskTreeModel">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAgAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TaskTreeModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="project" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

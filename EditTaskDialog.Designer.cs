@@ -45,7 +45,7 @@ namespace MyProject
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.nudProgress = new System.Windows.Forms.NumericUpDown();
-            this.chbComplited = new System.Windows.Forms.CheckBox();
+            this.chbCompleted = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.priorityList = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -120,7 +120,7 @@ namespace MyProject
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label7, 4, 2);
             this.tableLayoutPanel2.Controls.Add(this.nudProgress, 5, 2);
-            this.tableLayoutPanel2.Controls.Add(this.chbComplited, 5, 3);
+            this.tableLayoutPanel2.Controls.Add(this.chbCompleted, 5, 3);
             this.tableLayoutPanel2.Controls.Add(this.label5, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.priorityList, 5, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -259,17 +259,17 @@ namespace MyProject
             this.nudProgress.Size = new System.Drawing.Size(65, 20);
             this.nudProgress.TabIndex = 5;
             // 
-            // chbComplited
+            // chbCompleted
             // 
-            this.chbComplited.AutoSize = true;
-            this.chbComplited.Location = new System.Drawing.Point(252, 90);
-            this.chbComplited.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.chbComplited.Name = "chbComplited";
-            this.chbComplited.Size = new System.Drawing.Size(72, 17);
-            this.chbComplited.TabIndex = 7;
-            this.chbComplited.Text = "Complited";
-            this.chbComplited.UseVisualStyleBackColor = true;
-            this.chbComplited.CheckStateChanged += new System.EventHandler(this.chbComplited_CheckStateChanged);
+            this.chbCompleted.AutoSize = true;
+            this.chbCompleted.Location = new System.Drawing.Point(252, 90);
+            this.chbCompleted.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.chbCompleted.Name = "chbCompleted";
+            this.chbCompleted.Size = new System.Drawing.Size(76, 17);
+            this.chbCompleted.TabIndex = 7;
+            this.chbCompleted.Text = "Completed";
+            this.chbCompleted.UseVisualStyleBackColor = true;
+            this.chbCompleted.CheckStateChanged += new System.EventHandler(this.chbCompleted_CheckStateChanged);
             // 
             // label5
             // 
@@ -334,7 +334,7 @@ namespace MyProject
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox chbComplited;
+        private System.Windows.Forms.CheckBox chbCompleted;
         private System.Windows.Forms.NumericUpDown nudProgress;
         private System.Windows.Forms.ComboBox priorityList;
     }

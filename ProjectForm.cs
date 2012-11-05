@@ -73,9 +73,9 @@ namespace MyProject
                     Aga.Controls.Tree.NodeControls.BaseTextControl btx = (Aga.Controls.Tree.NodeControls.BaseTextControl)nControl;
                     btx.DrawText += new EventHandler<Aga.Controls.Tree.NodeControls.DrawEventArgs>(btx_DrawText);
                 }
-                catch (InvalidCastException ice)
+                catch //(InvalidCastException ice)
                 {
-                    Console.WriteLine(ice.Message);
+                    //Console.WriteLine(ice.Message);
                 }
             }
         }

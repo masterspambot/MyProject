@@ -30,7 +30,7 @@ namespace MyProject
                 this.editedTask = value;
                 this.txtTask.Text = this.editedTask.Name;
                 this.txtDescription.Text = this.editedTask.Description;
-                this.chbComplited.Checked = this.editedTask.Completed;
+                this.chbCompleted.Checked = this.editedTask.Completed;
                 this.nudDuration.Value = this.editedTask.Duration;
                 this.dtpStart.Value = this.editedTask.Start;
                 this.dtpEnd.Value = this.editedTask.End;
@@ -48,7 +48,7 @@ namespace MyProject
         {
             this.editedTask.Name = this.txtTask.Text;
             this.editedTask.Description = this.txtDescription.Text;
-            this.editedTask.Completed = this.chbComplited.Checked;
+            this.editedTask.Completed = this.chbCompleted.Checked;
             this.editedTask.Duration = Convert.ToInt32(this.nudDuration.Value);
             this.editedTask.Start = this.dtpStart.Value;
             this.editedTask.End = this.dtpEnd.Value;
@@ -81,9 +81,9 @@ namespace MyProject
         {
         }
 
-        private void chbComplited_CheckStateChanged(object sender, EventArgs e)
+        private void chbCompleted_CheckStateChanged(object sender, EventArgs e)
         {
-            if (this.chbComplited.Checked)
+            if (this.chbCompleted.Checked)
             {
                 this.nudProgress.Value = PERCENT_FULL;
             }

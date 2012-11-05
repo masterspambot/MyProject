@@ -85,15 +85,9 @@
             this.ntxtDescription = new Aga.Controls.Tree.NodeControls.NodeTextBox();
             this.ntxtName = new Aga.Controls.Tree.NodeControls.NodeTextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tstPlanned = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tstInProgress = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tstOvertime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tstDone = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tstError = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -636,48 +630,12 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tstPlanned,
-            this.tstInProgress,
-            this.tstOvertime,
-            this.tstDone,
-            this.tstError});
             this.statusStrip1.Location = new System.Drawing.Point(0, 451);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
             this.statusStrip1.Size = new System.Drawing.Size(797, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // tstPlanned
-            // 
-            this.tstPlanned.Name = "tstPlanned";
-            this.tstPlanned.Size = new System.Drawing.Size(118, 17);
-            this.tstPlanned.Text = "toolStripStatusLabel1";
-            // 
-            // tstInProgress
-            // 
-            this.tstInProgress.Name = "tstInProgress";
-            this.tstInProgress.Size = new System.Drawing.Size(118, 17);
-            this.tstInProgress.Text = "toolStripStatusLabel2";
-            // 
-            // tstOvertime
-            // 
-            this.tstOvertime.Name = "tstOvertime";
-            this.tstOvertime.Size = new System.Drawing.Size(118, 17);
-            this.tstOvertime.Text = "toolStripStatusLabel3";
-            // 
-            // tstDone
-            // 
-            this.tstDone.Name = "tstDone";
-            this.tstDone.Size = new System.Drawing.Size(118, 17);
-            this.tstDone.Text = "toolStripStatusLabel4";
-            // 
-            // tstError
-            // 
-            this.tstError.Name = "tstError";
-            this.tstError.Size = new System.Drawing.Size(118, 17);
-            this.tstError.Text = "toolStripStatusLabel5";
             // 
             // ProjectForm
             // 
@@ -698,8 +656,6 @@
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -760,11 +716,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripButton9;
         private System.Windows.Forms.ToolStripMenuItem toolStripButton10;
         private System.Windows.Forms.ToolStripSplitButton tsbOpenProject;
-        private System.Windows.Forms.ToolStripStatusLabel tstPlanned;
-        private System.Windows.Forms.ToolStripStatusLabel tstInProgress;
-        private System.Windows.Forms.ToolStripStatusLabel tstOvertime;
-        private System.Windows.Forms.ToolStripStatusLabel tstDone;
-        private System.Windows.Forms.ToolStripStatusLabel tstError;
         private Aga.Controls.Tree.NodeControls.NodeTextBox ntxtName;
         private System.Windows.Forms.ToolStripButton tsbAddProject;
         private System.Windows.Forms.ToolStripButton tsbDeleteProj;

@@ -14,50 +14,6 @@ namespace MyProject
             dlgEditTask = new EditTaskDialog();
             this.FormClosing += new FormClosingEventHandler(ProjectForm_FormClosing);
             addDrawHandlersToNodes();
-            buildLegendColor();
-        }
-
-        private void buildLegendColor()
-        {
-            tstDone.ForeColor = getColorByTaskStatus(Task.TaskStatus.DONE);
-            tstDone.Text = Task.TaskStatus.DONE.ToString();
-            tstInProgress.ForeColor = getColorByTaskStatus(Task.TaskStatus.INPROGRESS);
-            tstInProgress.Text = Task.TaskStatus.INPROGRESS.ToString();
-            tstOvertime.ForeColor = getColorByTaskStatus(Task.TaskStatus.OVERTIME);
-            tstOvertime.Text = Task.TaskStatus.OVERTIME.ToString();
-            tstPlanned.ForeColor = getColorByTaskStatus(Task.TaskStatus.PLANNED);
-            tstPlanned.Text = Task.TaskStatus.PLANNED.ToString();
-            tstError.ForeColor = getColorByTaskStatus(Task.TaskStatus.ERROR);
-            tstError.Text = Task.TaskStatus.ERROR.ToString();
-        }
-
-        /// <summary>
-        /// Funkcja zwraca kolor na podstawie statusu Tasku
-        /// </summary>
-        /// <param name="status"></param>
-        /// <returns></returns>
-        private Color getColorByTaskStatus(Task.TaskStatus status)
-        {
-            Color c = Color.Violet;
-            switch (status)
-            {
-                case Task.TaskStatus.DONE:
-                    c = Color.Green;
-                    break;
-                case Task.TaskStatus.INPROGRESS:
-                    c = Color.Blue;
-                    break;
-                case Task.TaskStatus.OVERTIME:
-                    c = Color.Red;
-                    break;
-                case Task.TaskStatus.PLANNED:
-                    c = Color.Black;
-                    break;
-                default:
-                    c = Color.Gray;
-                    break;
-            }
-            return c;
         }
 
         /// <summary>
@@ -89,13 +45,10 @@ namespace MyProject
         {
             Task t = e.Node.Tag as Task;
             Task.TaskStatus status = Task.TaskStatus.ERROR;
-            Color c = Color.Violet;
-
             if (t != null)
             {
                 status = t.Status;
             }
-            e.TextColor = getColorByTaskStatus(status);
         }
 
         void ProjectForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -642,27 +595,6 @@ namespace MyProject
 
         private void pd_PrintTask(Task t, PrintPageEventArgs e, int i)
         {
-            switch (t.Status)
-            {
-                case MyProject.Task.TaskStatus.PLANNED:
-                    brush.Color = Color.Black;
-                    break;
-                case MyProject.Task.TaskStatus.INPROGRESS:
-                    brush.Color = Color.Blue;
-                    break;
-                case MyProject.Task.TaskStatus.OVERTIME:
-                    brush.Color = Color.Red;
-                    break;
-                case MyProject.Task.TaskStatus.DONE:
-                    brush.Color = Color.Green;
-                    break;
-                case MyProject.Task.TaskStatus.ERROR:
-                    brush.Color = Color.Gray;
-                    break;
-                default:
-                    brush.Color = Color.Black;
-                    break;
-            }
             e.Graphics.DrawString(t.Name + "   " + t.Duration + "   " + t.Start + "   " + t.End + "   " + t.Progress + "%   " + t.Priority + "   " + t.Description, tree.Font, brush,
                     new PointF(t.Level * (float)tree.Font.Size, i * (float)tree.Font.Height), StringFormat.GenericTypographic);
         }

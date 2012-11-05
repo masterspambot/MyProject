@@ -12,10 +12,29 @@ namespace MyProject
             this.priorityList.DataSource = new List<string>() { "VERY LOW", "LOW", "MEDIUM", "HIGH", "CRITICAL" };
         }
 
-        public DialogResult ShowEditDialog(Task t) { 
+        public DialogResult ShowEditDialog(Task t)
+        {
             this.EditedTask = t;
-            
-            return this.ShowDialog(); }
+            if (t.Tasks.Count > 0)
+            {
+                if (this.tableLayoutPanel2.Controls.Contains(nudProgress))
+                {
+                    chbCompleted.Visible = false;
+                    this.tableLayoutPanel2.Controls.Remove(nudProgress);
+                    this.tableLayoutPanel2.Controls.Add(ProgressLabel, 5, 2);
+                }
+            }
+            else
+            {
+                if (this.tableLayoutPanel2.Controls.Contains(ProgressLabel))
+                {
+                    chbCompleted.Visible = true;
+                    this.tableLayoutPanel2.Controls.Remove(ProgressLabel);
+                    this.tableLayoutPanel2.Controls.Add(nudProgress, 5, 2);
+                }
+            }
+            return this.ShowDialog();
+        }
 
         private Task editedTask;
         private const int PERCENT_FULL = 100;
@@ -35,6 +54,7 @@ namespace MyProject
                 this.dtpStart.Value = this.editedTask.Start;
                 this.dtpEnd.Value = this.editedTask.End;
                 this.nudProgress.Value = this.editedTask.Progress;
+                this.ProgressLabel.Text = this.editedTask.Progress + " % completed";
                 this.priorityList.SelectedIndex = this.priorityList.FindString(this.editedTask.Priority);
             }
         }

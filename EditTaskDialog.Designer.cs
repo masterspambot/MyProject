@@ -37,6 +37,7 @@ namespace MyProject
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ProgressLabel = new System.Windows.Forms.Label();
             this.txtTask = new System.Windows.Forms.TextBox();
             this.nudDuration = new System.Windows.Forms.NumericUpDown();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
@@ -181,6 +182,15 @@ namespace MyProject
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "End:";
+            // 
+            // ProgressLabel
+            // 
+            this.ProgressLabel.AutoSize = true;
+            this.ProgressLabel.Location = new System.Drawing.Point(0, 0);
+            this.ProgressLabel.Name = "ProgressLabel";
+            this.ProgressLabel.Size = new System.Drawing.Size(51, 13);
+            this.ProgressLabel.TabIndex = 0;
+            this.ProgressLabel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             // 
             // txtTask
             // 
@@ -337,5 +347,6 @@ namespace MyProject
         private System.Windows.Forms.CheckBox chbCompleted;
         private System.Windows.Forms.NumericUpDown nudProgress;
         private System.Windows.Forms.ComboBox priorityList;
+        private System.Windows.Forms.Label ProgressLabel;
     }
 }

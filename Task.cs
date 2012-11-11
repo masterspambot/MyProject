@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -15,16 +15,17 @@ namespace MyProject
             DONE = 3,
             ERROR = 4
         }
-        //test integracji VS2008 z svnem
+        
         private string _name = string.Empty;
         private DateTime _start = DateTime.Now;
         private DateTime _end = DateTime.Now;
         private string _description = string.Empty;
+        private string _assigned = string.Empty;
         private int _progress = 0;
         private readonly List<Task> _tasks = new List<Task>();
         private int _duration = 1;
         private string _priority = "VERY LOW";
-        // zawiera wskaźnik na rodzica elementu w drzewie
+        // zawiera wska�nik na rodzica elementu w drzewie
         private int level = 0;
 
         public int Level
@@ -86,7 +87,7 @@ namespace MyProject
             {
                 if (this._tasks.Count > 0)
                 {
-                    //сум_общ(длительн_каждого_задания * процент_выполн/100)/длительн_всех_заданий*100
+                    //sum_total(duration_of_each_task * completion_percent/100)/duration_of_all_jobs*100
                     int sum_dur = 0; decimal sum_by_progress = 0m;
                     foreach (Task t in this._tasks)
                     {
@@ -143,7 +144,16 @@ namespace MyProject
         }
 
         /// <summary>
-        /// Zwraca status zadania (ale te zadania coś mają problemy ze sprawdzaniem swojej daty
+        /// Stores string with name of an assigned person
+        /// </summary>
+        public string Assigned
+        {
+            get { return this._assigned; }
+            set { this._assigned = value; }
+        }
+
+        /// <summary>
+        /// Zwraca status zadania (ale te zadania co� maj� problemy ze sprawdzaniem swojej daty
         /// </summary>
         public TaskStatus Status
         {
@@ -184,7 +194,7 @@ namespace MyProject
         public bool Expanded { get { return this._expanded; } set { this._expanded = value; } }
 
         /// <summary>
-        /// Картинка продолжительности задания - для размещения в таблице. Высота - 20, ширина - 150
+        /// Overall duration of tasks - for placing in the table. Height - 20, width - 150
         /// </summary>
         [Obsolete]
         public Image Image
@@ -194,7 +204,6 @@ namespace MyProject
                 Bitmap bmp = new Bitmap(150, 20);
                 Graphics g = Graphics.FromImage(bmp);
 
-                //Хе-хе... Нужны даты начала и конца проекта)))
                 //re he-he :) - it's needed for grid only - but not for independent image-report...
                 //              for such report this property not needed at all ):
                 g.Dispose();

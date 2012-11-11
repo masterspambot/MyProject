@@ -49,6 +49,7 @@ namespace MyProject
                 this.editedTask = value;
                 this.txtTask.Text = this.editedTask.Name;
                 this.txtDescription.Text = this.editedTask.Description;
+                this.txtAssigned.Text = this.editedTask.Assigned;
                 this.chbCompleted.Checked = this.editedTask.Completed;
                 this.nudDuration.Value = this.editedTask.Duration;
                 this.dtpStart.Value = this.editedTask.Start;
@@ -68,6 +69,7 @@ namespace MyProject
         {
             this.editedTask.Name = this.txtTask.Text;
             this.editedTask.Description = this.txtDescription.Text;
+            this.editedTask.Assigned = this.txtAssigned.Text;
             this.editedTask.Completed = this.chbCompleted.Checked;
             this.editedTask.Duration = Convert.ToInt32(this.nudDuration.Value);
             this.editedTask.Start = this.dtpStart.Value;

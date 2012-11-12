@@ -116,9 +116,9 @@ namespace MyProject
                     foreach (Task t in this._tasks)
                     {
                         sum_dur += t.Duration;
-                        sum_by_progress += t.Progress * t.Duration / 100;
+                        sum_by_progress += t.Progress * t.Duration;
                     }
-                    return Convert.ToInt32(sum_by_progress / sum_dur * 100);//
+                    return Convert.ToInt32(sum_by_progress / sum_dur);//
                 }
                 return this._progress;
             }

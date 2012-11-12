@@ -48,9 +48,12 @@ namespace MyProject
             this.chbCompleted = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.priorityList = new System.Windows.Forms.ComboBox();
-            this.ProgressLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtAssigned = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TaskFontColorBtn = new System.Windows.Forms.Button();
+            this.TaskFontColorLbl = new System.Windows.Forms.Label();
+            this.ProgressLabel = new System.Windows.Forms.Label();
+            this.TaskFontColorDialog = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
@@ -67,7 +70,7 @@ namespace MyProject
             this.tableLayoutPanel1.Controls.Add(this.btnOK, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCancel, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 334);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 460);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -128,20 +131,23 @@ namespace MyProject
             this.tableLayoutPanel2.Controls.Add(this.priorityList, 5, 4);
             this.tableLayoutPanel2.Controls.Add(this.txtAssigned, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.TaskFontColorBtn, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.TaskFontColorLbl, 0, 7);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(6);
-            this.tableLayoutPanel2.RowCount = 7;
+            this.tableLayoutPanel2.RowCount = 8;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(491, 334);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(491, 460);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label1
@@ -234,7 +240,7 @@ namespace MyProject
             this.txtDescription.Location = new System.Drawing.Point(9, 140);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(473, 165);
+            this.txtDescription.Size = new System.Drawing.Size(473, 256);
             this.txtDescription.TabIndex = 6;
             // 
             // label6
@@ -251,7 +257,7 @@ namespace MyProject
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(218, 64);
+            this.label7.Location = new System.Drawing.Point(233, 64);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
@@ -260,7 +266,7 @@ namespace MyProject
             // 
             // nudProgress
             // 
-            this.nudProgress.Location = new System.Drawing.Point(275, 61);
+            this.nudProgress.Location = new System.Drawing.Point(290, 61);
             this.nudProgress.Name = "nudProgress";
             this.nudProgress.Size = new System.Drawing.Size(65, 20);
             this.nudProgress.TabIndex = 5;
@@ -268,7 +274,7 @@ namespace MyProject
             // chbCompleted
             // 
             this.chbCompleted.AutoSize = true;
-            this.chbCompleted.Location = new System.Drawing.Point(275, 90);
+            this.chbCompleted.Location = new System.Drawing.Point(290, 90);
             this.chbCompleted.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.chbCompleted.Name = "chbCompleted";
             this.chbCompleted.Size = new System.Drawing.Size(76, 17);
@@ -281,7 +287,7 @@ namespace MyProject
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(168, 38);
+            this.label5.Location = new System.Drawing.Point(185, 38);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(21, 13);
@@ -290,10 +296,51 @@ namespace MyProject
             // 
             // priorityList
             // 
-            this.priorityList.Location = new System.Drawing.Point(275, 113);
+            this.priorityList.Location = new System.Drawing.Point(290, 113);
             this.priorityList.Name = "priorityList";
             this.priorityList.Size = new System.Drawing.Size(121, 21);
             this.priorityList.TabIndex = 13;
+            // 
+            // txtAssigned
+            // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtAssigned, 4);
+            this.txtAssigned.Location = new System.Drawing.Point(104, 402);
+            this.txtAssigned.Name = "txtAssigned";
+            this.txtAssigned.Size = new System.Drawing.Size(180, 20);
+            this.txtAssigned.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 405);
+            this.label8.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Assigned Person:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TaskFontColorBtn
+            // 
+            this.TaskFontColorBtn.BackColor = System.Drawing.Color.Transparent;
+            this.TaskFontColorBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.TaskFontColorBtn.Location = new System.Drawing.Point(104, 431);
+            this.TaskFontColorBtn.Name = "TaskFontColorBtn";
+            this.TaskFontColorBtn.Size = new System.Drawing.Size(75, 20);
+            this.TaskFontColorBtn.TabIndex = 17;
+            this.TaskFontColorBtn.UseVisualStyleBackColor = false;
+            this.TaskFontColorBtn.Click += new System.EventHandler(this.TaskFontColorBtn_Click);
+            // 
+            // TaskFontColorLbl
+            // 
+            this.TaskFontColorLbl.AutoSize = true;
+            this.TaskFontColorLbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TaskFontColorLbl.Location = new System.Drawing.Point(9, 428);
+            this.TaskFontColorLbl.Name = "TaskFontColorLbl";
+            this.TaskFontColorLbl.Size = new System.Drawing.Size(89, 26);
+            this.TaskFontColorLbl.TabIndex = 16;
+            this.TaskFontColorLbl.Text = "Font Color";
+            this.TaskFontColorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ProgressLabel
             // 
@@ -304,24 +351,9 @@ namespace MyProject
             this.ProgressLabel.Size = new System.Drawing.Size(51, 13);
             this.ProgressLabel.TabIndex = 0;
             // 
-            // label8
+            // TaskFontColorDialog
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 314);
-            this.label8.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Assigned Person:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAssigned
-            // 
-            this.tableLayoutPanel2.SetColumnSpan(this.txtAssigned, 4);
-            this.txtAssigned.Location = new System.Drawing.Point(104, 311);
-            this.txtAssigned.Name = "txtAssigned";
-            this.txtAssigned.Size = new System.Drawing.Size(147, 20);
-            this.txtAssigned.TabIndex = 15;
+            this.TaskFontColorDialog.Color = System.Drawing.Color.Transparent;
             // 
             // EditTaskDialog
             // 
@@ -329,7 +361,7 @@ namespace MyProject
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(491, 369);
+            this.ClientSize = new System.Drawing.Size(491, 495);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -374,5 +406,8 @@ namespace MyProject
         private System.Windows.Forms.Label ProgressLabel;
         private System.Windows.Forms.TextBox txtAssigned;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button TaskFontColorBtn;
+        private System.Windows.Forms.Label TaskFontColorLbl;
+        private System.Windows.Forms.ColorDialog TaskFontColorDialog;
     }
 }

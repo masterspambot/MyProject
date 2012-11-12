@@ -28,6 +28,30 @@ namespace MyProject
         // zawiera wskaünik na rodzica elementu w drzewie
         private int level = 0;
 
+        public string fontC
+        {
+            get
+            {
+                return TaskColorsHelper.SerializeColor(this.fColor);
+            }
+            set
+            {
+                fColor = TaskColorsHelper.DeserializeColor(value);
+            }
+        }
+
+
+        private Color fColor = Color.Black;
+        public Color getFontColor()
+        {
+            return this.fColor;
+        }
+
+        public void setFontColor(Color newColor)
+        {
+            this.fColor = newColor;
+        }
+
         public int Level
         {
             get { return level; }

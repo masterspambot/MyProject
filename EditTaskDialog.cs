@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MyProject
@@ -14,6 +15,7 @@ namespace MyProject
 
         public DialogResult ShowEditDialog(Task t)
         {
+            TaskFontColorBtn.BackColor = t.getFontColor();
             this.EditedTask = t;
             if (t.Tasks.Count > 0)
             {
@@ -113,6 +115,22 @@ namespace MyProject
             {
                 this.nudProgress.Value = PERCENT_ZERO;
             }
+        }
+
+        private void TaskFontColorBtn_Click(object sender, EventArgs e)
+        {
+            TaskFontColorDialog.Color = this.editedTask.getFontColor();
+            var result = TaskFontColorDialog.ShowDialog();
+            if (result.Equals(System.Windows.Forms.DialogResult.OK))
+            {
+                changeTaskFontColor(TaskFontColorDialog.Color);
+            }
+            else return;
+        }
+        private void changeTaskFontColor(Color newColor)
+        {
+            this.editedTask.setFontColor(newColor);
+            TaskFontColorBtn.BackColor = newColor;
         }
     }
 }

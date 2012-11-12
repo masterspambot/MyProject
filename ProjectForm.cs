@@ -43,12 +43,20 @@ namespace MyProject
         /// <param name="e"></param>
         void btx_DrawText(object sender, Aga.Controls.Tree.NodeControls.DrawEventArgs e)
         {
+            
             Task t = e.Node.Tag as Task;
+            e.TextColor = t.getFontColor();
             Task.TaskStatus status = Task.TaskStatus.ERROR;
             if (t != null)
             {
                 status = t.Status;
             }
+        }
+
+        private Color getColorForTask()
+        {
+            return Color.RosyBrown;
+            //TODO
         }
 
         void ProjectForm_FormClosing(object sender, FormClosingEventArgs e)

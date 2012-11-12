@@ -63,6 +63,7 @@
             this.ok = new Aga.Controls.Tree.TreeColumn();
             this.progress = new Aga.Controls.Tree.TreeColumn();
             this.priority = new Aga.Controls.Tree.TreeColumn();
+            this.assigned = new Aga.Controls.Tree.TreeColumn();
             this.description = new Aga.Controls.Tree.TreeColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,9 +85,8 @@
             this.txtPriority = new Aga.Controls.Tree.NodeControls.NodeTextBox();
             this.ntxtDescription = new Aga.Controls.Tree.NodeControls.NodeTextBox();
             this.ntxtName = new Aga.Controls.Tree.NodeControls.NodeTextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.assigned = new Aga.Controls.Tree.TreeColumn();
             this.ntxtAssigned = new Aga.Controls.Tree.NodeControls.NodeTextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -342,7 +342,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1013, 426);
+            this.panel1.Size = new System.Drawing.Size(1013, 419);
             this.panel1.TabIndex = 2;
             // 
             // tree
@@ -380,7 +380,7 @@
             this.tree.NodeControls.Add(this.ntxtAssigned);
             this.tree.SelectedNode = null;
             this.tree.ShowNodeToolTips = true;
-            this.tree.Size = new System.Drawing.Size(1013, 426);
+            this.tree.Size = new System.Drawing.Size(1013, 419);
             this.tree.TabIndex = 0;
             this.tree.Text = "tree";
             this.tree.UseColumns = true;
@@ -440,6 +440,13 @@
             this.priority.TooltipText = null;
             this.priority.Width = 80;
             // 
+            // assigned
+            // 
+            this.assigned.Header = "Assigned";
+            this.assigned.SortOrder = System.Windows.Forms.SortOrder.None;
+            this.assigned.TooltipText = null;
+            this.assigned.Width = 150;
+            // 
             // description
             // 
             this.description.Header = "Description";
@@ -462,7 +469,7 @@
             this.toolStripButton9,
             this.toolStripButton10});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(248, 214);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(257, 214);
             // 
             // toolStripButton1
             // 
@@ -470,7 +477,7 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.ShortcutKeyDisplayString = "Insert";
-            this.toolStripButton1.Size = new System.Drawing.Size(247, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(256, 22);
             this.toolStripButton1.Text = "Add Task";
             this.toolStripButton1.ToolTipText = "Add Task (Insert)";
             this.toolStripButton1.Click += new System.EventHandler(this.TsbTaskAddClick);
@@ -481,7 +488,7 @@
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.ShortcutKeyDisplayString = "F2";
-            this.toolStripButton2.Size = new System.Drawing.Size(247, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(256, 22);
             this.toolStripButton2.Text = "Task Edit";
             this.toolStripButton2.ToolTipText = "Task Edit (F2)";
             this.toolStripButton2.Click += new System.EventHandler(this.tsbTaskEdit_Click);
@@ -492,7 +499,7 @@
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.ShortcutKeyDisplayString = "Delete";
-            this.toolStripButton3.Size = new System.Drawing.Size(247, 22);
+            this.toolStripButton3.Size = new System.Drawing.Size(256, 22);
             this.toolStripButton3.Text = "Task Delete";
             this.toolStripButton3.ToolTipText = "Task Delete (Delete)";
             this.toolStripButton3.Click += new System.EventHandler(this.TsbTaskDeleteClick);
@@ -500,14 +507,14 @@
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(244, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(253, 6);
             // 
             // toolStripButton5
             // 
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(247, 22);
+            this.toolStripButton5.Size = new System.Drawing.Size(256, 22);
             this.toolStripButton5.Text = "Move Left";
             this.toolStripButton5.Click += new System.EventHandler(this.tsbMoveLeft_Click);
             // 
@@ -516,7 +523,7 @@
             this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(247, 22);
+            this.toolStripButton6.Size = new System.Drawing.Size(256, 22);
             this.toolStripButton6.Text = "Move Right";
             this.toolStripButton6.Click += new System.EventHandler(this.tsbMoveRight_Click);
             // 
@@ -525,7 +532,7 @@
             this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(247, 22);
+            this.toolStripButton7.Size = new System.Drawing.Size(256, 22);
             this.toolStripButton7.Text = "Move Up";
             this.toolStripButton7.Click += new System.EventHandler(this.tsbMoveUp_Click);
             // 
@@ -534,21 +541,21 @@
             this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(247, 22);
+            this.toolStripButton8.Size = new System.Drawing.Size(256, 22);
             this.toolStripButton8.Text = "Move Down";
             this.toolStripButton8.Click += new System.EventHandler(this.tsbMoveDown_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(244, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(253, 6);
             // 
             // toolStripButton9
             // 
             this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(247, 22);
+            this.toolStripButton9.Size = new System.Drawing.Size(256, 22);
             this.toolStripButton9.Text = "Import Project";
             this.toolStripButton9.Click += new System.EventHandler(this.tsbImport_Click);
             // 
@@ -557,7 +564,7 @@
             this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(247, 22);
+            this.toolStripButton10.Size = new System.Drawing.Size(256, 22);
             this.toolStripButton10.Text = "Export Task as Project (Seve to file)";
             this.toolStripButton10.Click += new System.EventHandler(this.tsbExport_Click);
             // 
@@ -632,22 +639,6 @@
             this.ntxtName.LeftMargin = 3;
             this.ntxtName.ParentColumn = this.name;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 451);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.statusStrip1.Size = new System.Drawing.Size(1013, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // assigned
-            // 
-            this.assigned.Header = "Assigned";
-            this.assigned.SortOrder = System.Windows.Forms.SortOrder.None;
-            this.assigned.TooltipText = null;
-            this.assigned.Width = 150;
-            // 
             // ntxtAssigned
             // 
             this.ntxtAssigned.DataPropertyName = "Assigned";
@@ -655,11 +646,20 @@
             this.ntxtAssigned.LeftMargin = 3;
             this.ntxtAssigned.ParentColumn = this.assigned;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 444);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
+            this.statusStrip1.Size = new System.Drawing.Size(1013, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // ProjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 473);
+            this.ClientSize = new System.Drawing.Size(1013, 466);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);

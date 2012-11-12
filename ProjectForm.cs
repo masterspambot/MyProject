@@ -61,7 +61,20 @@ namespace MyProject
 
         void ProjectForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            recentList.Save();
+            try
+            {
+                recentList.Save();
+            }
+            catch
+            {
+                if (Properties.Settings.Default.AppLocationExceptionShow)
+                {
+                    DialogResult r = MessageBox.Show("Project cannot save \"recent.xml\". \nCurrent application's directory is not writable."
+                        , "MyProject", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Properties.Settings.Default.AppLocationExceptionShow = false;
+                    Properties.Settings.Default.Save();
+                }
+            }
             if (!Saved)
             {
                 DialogResult r = MessageBox.Show("Project has been changed. \nSave changes?"

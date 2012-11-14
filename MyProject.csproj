@@ -57,6 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TaskColorsHelper.cs" />
     <Compile Include="EditTaskDialog.cs">
       <SubType>Form</SubType>
@@ -82,14 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,12 +106,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppIcon.ico" />
-    <Content Include="Resources\add.png" />
-    <None Include="Resources\delete.bmp" />
-    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\application_osx.jpg" />
+    <None Include="Resources\box.jpg" />
+    <None Include="Resources\document_letter_blank.jpg" />
+    <None Include="Resources\application_osx_add1.jpg" />
+    <None Include="Resources\hcard_new.jpg" />
+    <None Include="Resources\arrow_medium_down.jpg" />
+    <None Include="Resources\arrow_medium_up.jpg" />
+    <None Include="Resources\arrow_medium_left.jpg" />
+    <None Include="Resources\arrow_medium_right.jpg" />
+    <None Include="Resources\box_remove.jpg" />
+    <None Include="Resources\box_edit.jpg" />
+    <None Include="Resources\printer.jpg" />
+    <None Include="Resources\refresh.jpg" />
+    <None Include="Resources\box_add.jpg" />
+    <None Include="Resources\application_osx_remove.jpg" />
+    <None Include="Resources\application_osx_add.jpg" />
+    <None Include="Resources\document_a4_new.jpg" />
+    <None Include="Resources\document_letter_upload.jpg" />
+    <None Include="Resources\document_letter_download.jpg" />
+    <None Include="Resources\documents_new.jpg" />
+    <None Include="Resources\folder_classic_edit.jpg" />
+    <None Include="Resources\folder_classic_opened.jpg" />
+    <None Include="Resources\applications_windows.png" />
     <None Include="ClassDiagram1.cd" />
-    <None Include="Resources\stop1.png" />
-    <None Include="Resources\accept.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

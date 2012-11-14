@@ -677,5 +677,91 @@ namespace MyProject
 
             }
         }
+
+        private void addProjectProjectFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsbAddProject_Click(sender, e);
+        }
+
+        private void removeProjectProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsbDeleteProj_Click(sender, e);
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Saved) return;
+            SaveProject();
+        }
+
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsbExport_Click(sender, e);
+        }
+
+        private void importProjectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            tsbImport_Click(sender, e);
+        }
+
+        private void printToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            tsbPrintPreview_Click(sender, e);
+        }
+
+        private void refreshToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RefreshTree();
+        }
+
+        private void addProjectFileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            tsbNewProject_Click(sender, e);
+        }
+
+        private void addTaskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TsbTaskAddClick(sender, e);
+        }
+
+        private void editTaskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsbTaskEdit_Click(sender, e);
+        }
+
+        private void removeTaskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TsbTaskDeleteClick(sender, e);
+        }
+
+        private void moveRightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsbMoveRight_Click(sender, e);
+        }
+
+        private void moveLeftToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsbMoveLeft_Click(sender, e);
+        }
+
+        private void moveUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsbMoveUp_Click(sender, e);
+        }
+
+        private void moveDownToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsbMoveDown_Click(sender, e);
+        }
+
+        private void saveAstProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveProject();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenProjectClick(sender, e);
+        }
     }
 }

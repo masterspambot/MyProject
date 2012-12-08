@@ -28,6 +28,7 @@ namespace MyProject
         private string _priority = "VERY LOW";
         // zawiera wskaünik na rodzica elementu w drzewie
         private int level = 0;
+        private List<String> _peopleList = new List<String>();
 
         public string fontC
         {
@@ -63,6 +64,12 @@ namespace MyProject
         {
             get { return this._name; }
             set { this._name = value; }
+        }
+
+        public List<String> PeopleList
+        {
+            get { return this._peopleList; }
+            set { this._peopleList = value; }
         }
 
         public List<Task> Tasks { get { return this._tasks; } }

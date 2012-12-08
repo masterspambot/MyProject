@@ -13,7 +13,7 @@ namespace MyProject
             this.priorityList.DataSource = new List<string>() { "VERY LOW", "LOW", "MEDIUM", "HIGH", "CRITICAL" };
         }
 
-        public DialogResult ShowEditDialog(Task t)
+        public DialogResult ShowEditDialog(Task t, Task project)
         {
             TaskFontColorBtn.BackColor = t.getFontColor();
             this.EditedTask = t;
@@ -35,6 +35,21 @@ namespace MyProject
                     this.tableLayoutPanel2.Controls.Add(nudProgress, 5, 2);
                 }
             }
+            if (this.editedTask.Level != 0)
+            {
+                this.peopleList.Visible = false;
+                this.comboBox1.Items.Clear();
+                foreach (String person in project.PeopleList) 
+                {
+                    this.comboBox1.Items.Add(person);
+                }
+                
+                // parent = this.parent;
+            }
+            else
+            {
+                this.peopleList.Visible = true;
+            }
             return this.ShowDialog();
         }
 
@@ -51,7 +66,7 @@ namespace MyProject
                 this.editedTask = value;
                 this.txtTask.Text = this.editedTask.Name;
                 this.txtDescription.Text = this.editedTask.Description;
-                this.txtAssigned.Text = this.editedTask.Assigned;
+                //this.comboBox1.Text = this.editedTask.Assigned;
                 this.chbCompleted.Checked = this.editedTask.Completed;
                 this.nudDuration.Value = this.editedTask.Duration;
                 this.dtpStart.Value = this.editedTask.Start;
@@ -59,6 +74,7 @@ namespace MyProject
                 this.nudProgress.Value = this.editedTask.Progress;
                 this.ProgressLabel.Text = this.editedTask.Progress + " % completed";
                 this.priorityList.SelectedIndex = this.priorityList.FindString(this.editedTask.Priority);
+                this.peopleList.Text = string.Join("\n", this.editedTask.PeopleList.ToArray());
             }
         }
 
@@ -71,7 +87,7 @@ namespace MyProject
         {
             this.editedTask.Name = this.txtTask.Text;
             this.editedTask.Description = this.txtDescription.Text;
-            this.editedTask.Assigned = this.txtAssigned.Text;
+            this.editedTask.Assigned = this.comboBox1.Text;
             this.editedTask.Completed = this.chbCompleted.Checked;
             this.editedTask.Duration = Convert.ToInt32(this.nudDuration.Value);
             this.editedTask.Start = this.dtpStart.Value;
@@ -100,7 +116,16 @@ namespace MyProject
                     this.editedTask.Priority = "VERY LOW";
                     break;
             }
-            //MessageBox.Show(editedTask.Status.ToString());
+            if (this.editedTask.Level == 0)
+            {
+                this.editedTask.PeopleList.Clear();
+                string[] lines = peopleList.Text.Split(new string[] { "\n" }, StringSplitOptions.None);
+                foreach (String line in lines)
+                {
+                    this.editedTask.PeopleList.Add(line);
+                }
+                peopleList.Text = "";
+            }
         }
 
         private void priorityList_SelectedItemChanged(object sender, EventArgs e)
@@ -135,5 +160,11 @@ namespace MyProject
             this.editedTask.setFontColor(newColor);
             TaskFontColorBtn.BackColor = newColor;
         }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

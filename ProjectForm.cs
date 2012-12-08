@@ -180,9 +180,17 @@ namespace MyProject
 
             Task pt = tree.SelectedNode.Tag as Task;
             Task nt = new Task();
-            if (dlgEditTask.ShowEditDialog(nt) != DialogResult.OK) return; ;
             nt.Level = pt.Level + 1;
+
+            Aga.Controls.Tree.TreeNodeAdv project = tree.SelectedNode;
+            while ((project.Tag as Task).Level != 0)
+            {
+                project = project.Parent;
+            }
+
+            if (dlgEditTask.ShowEditDialog(nt, project.Tag as Task) != DialogResult.OK) return; ;
             pt.Tasks.Add(nt);
+
             RefreshTree();
 
             tree.SelectedNode = tree.FindNodeByTag(nt);
@@ -194,7 +202,12 @@ namespace MyProject
             if (tree.SelectedNode == null || tree.SelectedNode.Tag == null) return;
 
             Task t = tree.SelectedNode.Tag as Task;
-            if (dlgEditTask.ShowEditDialog(t) == DialogResult.OK) Saved = false;
+            Aga.Controls.Tree.TreeNodeAdv project = tree.SelectedNode;
+            while ((project.Tag as Task).Level != 0)
+            {
+                project = project.Parent;
+            }
+            if (dlgEditTask.ShowEditDialog(t, project.Tag as Task) == DialogResult.OK) Saved = false;
         }
 
         void TsbTaskDeleteClick(object sender, EventArgs e)
@@ -656,7 +669,7 @@ namespace MyProject
         private void tsbAddProject_Click(object sender, EventArgs e)
         {
             Task nt = new Task();
-            if (dlgEditTask.ShowEditDialog(nt) != DialogResult.OK) return; ;
+            if (dlgEditTask.ShowEditDialog(nt, nt) != DialogResult.OK) return; ;
             model.AddProject(nt);
             RefreshTree();
 

@@ -252,7 +252,7 @@
             this.end.TooltipText = null;
             this.end.Width = 80;
             // 
-            // ok
+            // completed
             // 
             this.ok.Header = "Completed";
             this.ok.SortOrder = System.Windows.Forms.SortOrder.None;

@@ -77,6 +77,8 @@ namespace MyProject
             this.editedTask.Start = this.dtpStart.Value;
             this.editedTask.End = this.dtpEnd.Value;
             this.editedTask.Progress = Convert.ToInt32(this.nudProgress.Value);
+            if (Convert.ToInt32(this.nudProgress.Value) == 100)
+                this.editedTask.Completed = true;
             switch (this.priorityList.SelectedIndex)
             {
                 case 0:

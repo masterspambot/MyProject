@@ -107,8 +107,8 @@ namespace MyProject
         }
 
         /// <summary>
-        /// Shows the progress of the task 
-        /// Property is calculated based on subtasks progress or self's value of progress
+        /// Status postêpu nad rezlizacj¹ zadania
+        /// Wyliczna na podstawie wartoœci progresu zadania (i podzadañ)
         /// </summary>
         public int Progress
         {
@@ -142,8 +142,8 @@ namespace MyProject
         }
 
         /// <summary>
-        /// Defines if the task is completed 
-        /// Property Completed is defined by status flag _isCompleted and value of Progress 
+        /// Flaga oznaczaj¹ca ukoñczenie zadania, pe³ni¹ca funkcjê wrappera pozawalaj¹cego cofaæ ukoñczenie zadania
+        /// Atrybut wylicznay na postawie flagi _isCompleted oraz Progress
         /// </summary>
         public bool Completed
         {
@@ -157,10 +157,16 @@ namespace MyProject
             }
             set
             {
+                Console.WriteLine();
                 this._isCompleted = value;
                 foreach (Task t in this._tasks)
                 {
                     t._isCompleted = value;
+                    //Drobne obejœcie pozwalaj¹ce na zachowanie flag w zaznaczonych podzadaniach przy odznaczniu zadania 
+                    if (t.Progress == 100)
+                    {
+                        t._isCompleted = true;
+                    }
                 }
             }
         }

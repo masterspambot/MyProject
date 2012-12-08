@@ -54,6 +54,7 @@ namespace MyProject
             this.TaskFontColorLbl = new System.Windows.Forms.Label();
             this.ProgressLabel = new System.Windows.Forms.Label();
             this.TaskFontColorDialog = new System.Windows.Forms.ColorDialog();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
@@ -86,7 +87,7 @@ namespace MyProject
             this.btnOK.Margin = new System.Windows.Forms.Padding(6);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(100, 23);
-            this.btnOK.TabIndex = 8;
+            this.btnOK.TabIndex = 11;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -99,7 +100,7 @@ namespace MyProject
             this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 23);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -131,6 +132,7 @@ namespace MyProject
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.TaskFontColorBtn, 1, 7);
             this.tableLayoutPanel2.Controls.Add(this.TaskFontColorLbl, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.richTextBox1, 5, 6);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -239,7 +241,7 @@ namespace MyProject
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(473, 256);
-            this.txtDescription.TabIndex = 6;
+            this.txtDescription.TabIndex = 8;
             // 
             // label6
             // 
@@ -276,7 +278,7 @@ namespace MyProject
             this.chbCompleted.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.chbCompleted.Name = "chbCompleted";
             this.chbCompleted.Size = new System.Drawing.Size(76, 17);
-            this.chbCompleted.TabIndex = 7;
+            this.chbCompleted.TabIndex = 6;
             this.chbCompleted.Text = "Completed";
             this.chbCompleted.UseVisualStyleBackColor = true;
             this.chbCompleted.CheckStateChanged += new System.EventHandler(this.chbCompleted_CheckStateChanged);
@@ -297,7 +299,7 @@ namespace MyProject
             this.priorityList.Location = new System.Drawing.Point(290, 113);
             this.priorityList.Name = "priorityList";
             this.priorityList.Size = new System.Drawing.Size(121, 21);
-            this.priorityList.TabIndex = 13;
+            this.priorityList.TabIndex = 7;
             // 
             // txtAssigned
             // 
@@ -305,7 +307,7 @@ namespace MyProject
             this.txtAssigned.Location = new System.Drawing.Point(104, 402);
             this.txtAssigned.Name = "txtAssigned";
             this.txtAssigned.Size = new System.Drawing.Size(180, 20);
-            this.txtAssigned.TabIndex = 15;
+            this.txtAssigned.TabIndex = 9;
             // 
             // label8
             // 
@@ -325,7 +327,7 @@ namespace MyProject
             this.TaskFontColorBtn.Location = new System.Drawing.Point(104, 431);
             this.TaskFontColorBtn.Name = "TaskFontColorBtn";
             this.TaskFontColorBtn.Size = new System.Drawing.Size(75, 20);
-            this.TaskFontColorBtn.TabIndex = 17;
+            this.TaskFontColorBtn.TabIndex = 10;
             this.TaskFontColorBtn.UseVisualStyleBackColor = false;
             this.TaskFontColorBtn.Click += new System.EventHandler(this.TaskFontColorBtn_Click);
             // 
@@ -352,6 +354,15 @@ namespace MyProject
             // TaskFontColorDialog
             // 
             this.TaskFontColorDialog.Color = System.Drawing.Color.Transparent;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(290, 402);
+            this.richTextBox1.Name = "richTextBox1";
+            this.tableLayoutPanel2.SetRowSpan(this.richTextBox1, 2);
+            this.richTextBox1.Size = new System.Drawing.Size(189, 49);
+            this.richTextBox1.TabIndex = 18;
+            this.richTextBox1.Text = "";
             // 
             // EditTaskDialog
             // 
@@ -407,5 +418,6 @@ namespace MyProject
         private System.Windows.Forms.Button TaskFontColorBtn;
         private System.Windows.Forms.Label TaskFontColorLbl;
         private System.Windows.Forms.ColorDialog TaskFontColorDialog;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

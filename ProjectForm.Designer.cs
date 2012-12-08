@@ -254,11 +254,11 @@
             // 
             // ok
             // 
-            this.ok.Header = "ok";
+            this.ok.Header = "Completed";
             this.ok.SortOrder = System.Windows.Forms.SortOrder.None;
             this.ok.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ok.TooltipText = null;
-            this.ok.Width = 30;
+            this.ok.Width = 80;
             // 
             // progress
             // 
@@ -318,7 +318,7 @@
             // nchOk
             // 
             this.nchOk.DataPropertyName = "Completed";
-            this.nchOk.LeftMargin = 0;
+            this.nchOk.LeftMargin = 35;
             this.nchOk.ParentColumn = this.ok;
             // 
             // nitxtDuration

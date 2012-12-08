@@ -22,6 +22,7 @@ namespace MyProject
         private string _description = string.Empty;
         private string _assigned = string.Empty;
         private int _progress = 0;
+        private bool _isCompleted = false;
         private readonly List<Task> _tasks = new List<Task>();
         private int _duration = 1;
         private string _priority = "VERY LOW";
@@ -105,22 +106,30 @@ namespace MyProject
             }
         }
 
+        /// <summary>
+        /// Shows the progress of the task 
+        /// Property is calculated based on subtasks progress or self's value of progress
+        /// </summary>
         public int Progress
         {
             get
             {
                 if (this._tasks.Count > 0)
                 {
-                    //sum_total(duration_of_each_task * completion_percent/100)/duration_of_all_jobs*100
-                    int sum_dur = 0; decimal sum_by_progress = 0m;
+                    decimal sum_by_progress = 0m;
                     foreach (Task t in this._tasks)
                     {
-                        sum_dur += t.Duration;
-                        sum_by_progress += t.Progress * t.Duration;
+                        if (t._isCompleted)
+                            sum_by_progress += 100;
+                        else
+                            sum_by_progress += t.Progress;
                     }
-                    return Convert.ToInt32(sum_by_progress / sum_dur);//
+                    return Convert.ToInt32(sum_by_progress / this._tasks.Count);
                 }
-                return this._progress;
+                if (this._isCompleted)
+                    return 100;
+                else
+                    return this._progress;
             }
             set
             {
@@ -132,12 +141,27 @@ namespace MyProject
             }
         }
 
+        /// <summary>
+        /// Defines if the task is completed 
+        /// Property Completed is defined by status flag _isCompleted and value of Progress 
+        /// </summary>
         public bool Completed
         {
-            get { return this.Progress == 100; }
+            get {
+                if (this.Progress == 100 || this._isCompleted)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
             set
             {
-                if (value) this.Progress = 100;
+                this._isCompleted = value;
+                foreach (Task t in this._tasks)
+                {
+                    t._isCompleted = value;
+                }
             }
         }
 

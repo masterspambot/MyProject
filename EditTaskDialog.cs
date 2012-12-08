@@ -109,11 +109,12 @@ namespace MyProject
         {
             if (this.chbCompleted.Checked)
             {
+                this.nudProgress.Enabled = false; 
                 this.nudProgress.Value = PERCENT_FULL;
             }
             else
             {
-                this.nudProgress.Value = PERCENT_ZERO;
+                this.nudProgress.Enabled = true;
             }
         }
 

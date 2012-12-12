@@ -7,6 +7,7 @@ namespace MyProject
 {
     public partial class EditTaskDialog : Form
     {
+        private bool _taskFontColorChanged;
         public EditTaskDialog()
         {
             InitializeComponent();
@@ -81,6 +82,7 @@ namespace MyProject
         private void EditTaskDialog_Shown(object sender, EventArgs e)
         {
             txtTask.Focus();
+            _taskFontColorChanged = false;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -126,6 +128,11 @@ namespace MyProject
                 }
                 peopleList.Text = "";
             }
+
+            if (_taskFontColorChanged)
+            {
+                changeTaskFontColor(TaskFontColorDialog.Color);
+            }
         }
 
         private void priorityList_SelectedItemChanged(object sender, EventArgs e)
@@ -151,20 +158,19 @@ namespace MyProject
             var result = TaskFontColorDialog.ShowDialog();
             if (result.Equals(System.Windows.Forms.DialogResult.OK))
             {
-                changeTaskFontColor(TaskFontColorDialog.Color);
+                TaskFontColorBtn.BackColor = TaskFontColorDialog.Color;
+                _taskFontColorChanged = true;
             }
             else return;
         }
         private void changeTaskFontColor(Color newColor)
         {
             this.editedTask.setFontColor(newColor);
-            TaskFontColorBtn.BackColor = newColor;
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
     }
 }

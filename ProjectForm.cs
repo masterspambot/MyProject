@@ -27,7 +27,9 @@ namespace MyProject
                 try
                 {
                     Aga.Controls.Tree.NodeControls.BaseTextControl btx = (Aga.Controls.Tree.NodeControls.BaseTextControl)nControl;
-                    btx.DrawText += new EventHandler<Aga.Controls.Tree.NodeControls.DrawEventArgs>(btx_DrawText);
+                    if (nControl.ParentColumn.TooltipText == "ColorBox")
+                         btx.DrawText += new EventHandler<Aga.Controls.Tree.NodeControls.DrawEventArgs>(btx_DrawText_ColorBlock);
+                    else btx.DrawText += new EventHandler<Aga.Controls.Tree.NodeControls.DrawEventArgs>(btx_DrawText);
                 }
                 catch //(InvalidCastException ice)
                 {
@@ -41,11 +43,21 @@ namespace MyProject
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void btx_DrawText(object sender, Aga.Controls.Tree.NodeControls.DrawEventArgs e)
+        void btx_DrawText_ColorBlock(object sender, Aga.Controls.Tree.NodeControls.DrawEventArgs e)
         {
-            
+
             Task t = e.Node.Tag as Task;
             e.TextColor = t.getFontColor();
+            Task.TaskStatus status = Task.TaskStatus.ERROR;
+            if (t != null)
+            {
+                status = t.Status;
+            }
+        }
+        void btx_DrawText(object sender, Aga.Controls.Tree.NodeControls.DrawEventArgs e)
+        {
+            Task t = e.Node.Tag as Task;
+            e.TextColor = Color.Black;
             Task.TaskStatus status = Task.TaskStatus.ERROR;
             if (t != null)
             {

@@ -1,6 +1,7 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Xml.Serialization;
 
 namespace MyProject
 {
@@ -15,7 +16,7 @@ namespace MyProject
             DONE = 3,
             ERROR = 4
         }
-        
+        private string _colorbox = "â– ";
         private string _name = string.Empty;
         private DateTime _start = DateTime.Now;
         private DateTime _end = DateTime.Now;
@@ -26,7 +27,7 @@ namespace MyProject
         private readonly List<Task> _tasks = new List<Task>();
         private int _duration = 1;
         private string _priority = "VERY LOW";
-        // zawiera wskaŸnik na rodzica elementu w drzewie
+        // zawiera wskaÅºnik na rodzica elementu w drzewie
         private int level = 0;
         private List<String> _peopleList = new List<String>();
 
@@ -43,7 +44,7 @@ namespace MyProject
         }
 
 
-        private Color fColor = Color.Black;
+        private Color fColor = System.Drawing.Color.Black;
         public Color getFontColor()
         {
             return this.fColor;
@@ -114,8 +115,8 @@ namespace MyProject
         }
 
         /// <summary>
-        /// Status postêpu nad rezlizacj¹ zadania
-        /// Wyliczna na podstawie wartoœci progresu zadania (i podzadañ)
+        /// Status postÄ™pu nad rezlizacjÄ… zadania
+        /// Wyliczna na podstawie wartoÅ›ci progresu zadania (i podzadaÅ„)
         /// </summary>
         public int Progress
         {
@@ -149,7 +150,7 @@ namespace MyProject
         }
 
         /// <summary>
-        /// Flaga oznaczaj¹ca ukoñczenie zadania, pe³ni¹ca funkcjê wrappera pozawalaj¹cego cofaæ ukoñczenie zadania
+        /// Flaga oznaczajÄ…ca ukoÅ„czenie zadania, peÅ‚niÄ…ca funkcjÄ™ wrappera pozawalajÄ…cego cofaÄ‡ ukoÅ„czenie zadania
         /// Atrybut wylicznay na postawie flagi _isCompleted oraz Progress
         /// </summary>
         public bool Completed
@@ -169,7 +170,7 @@ namespace MyProject
                 foreach (Task t in this._tasks)
                 {
                     t._isCompleted = value;
-                    //Drobne obejœcie pozwalaj¹ce na zachowanie flag w zaznaczonych podzadaniach przy odznaczniu zadania 
+                    //Drobne obejÅ›cie pozwalajÄ…ce na zachowanie flag w zaznaczonych podzadaniach przy odznaczniu zadania 
                     if (t.Progress == 100)
                     {
                         t._isCompleted = true;
@@ -214,7 +215,18 @@ namespace MyProject
         }
 
         /// <summary>
-        /// Zwraca status zadania (ale te zadania coœ maj¹ problemy ze sprawdzaniem swojej daty
+        /// Stores string with block to color
+        /// </summary>
+
+        [XmlIgnore]
+        public string ColorBox
+        {
+            get { return this._colorbox; }
+            set { this._colorbox = value; }
+        }
+
+        /// <summary>
+        /// Zwraca status zadania (ale te zadania coÅ› majÄ… problemy ze sprawdzaniem swojej daty
         /// </summary>
         public TaskStatus Status
         {

@@ -67,7 +67,8 @@ namespace MyProject
                 this.editedTask = value;
                 this.txtTask.Text = this.editedTask.Name;
                 this.txtDescription.Text = this.editedTask.Description;
-                //this.comboBox1.Text = this.editedTask.Assigned;
+                //this.comboBox1.Text = this.editedTask.
+                ;
                 this.chbCompleted.Checked = this.editedTask.Completed;
                 this.nudDuration.Value = this.editedTask.Duration;
                 this.dtpStart.Value = this.editedTask.Start;
